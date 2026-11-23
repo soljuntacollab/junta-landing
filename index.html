@@ -311,16 +311,17 @@ html,body{margin:0;background:#0A0A0A}
 .hab .rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.6vw,24px)}
 .hab .rooms{align-items:stretch}
 .hab .room{margin:0;display:grid;gap:clamp(12px,2.2svh,24px);grid-template-rows:1fr auto}
+.hab .rooms .room{grid-template-rows:auto 1fr;gap:clamp(14px,2svh,22px)}
 .hab .box{position:relative;background:#141414;border:1.5px solid rgba(251,236,53,.55);color:var(--amarillo);padding:clamp(12px,2svh,24px) clamp(12px,1.4vw,20px);display:flex;align-items:flex-end;position:relative;transition:background .9s,color .9s,border-color .9s,box-shadow .9s}
 .hab .rooms .box{min-height:clamp(110px,22svh,240px)}
 .hab .box p,.hab .box li{font:400 clamp(12px,min(1.2vw,2svh),17px)/1.45 var(--maquina);margin:0}
-.hab figcaption{font:400 clamp(22px,min(3vw,4.2svh),40px)/1 var(--display);text-transform:lowercase;color:var(--amarillo);transition:color .9s}
+.hab figcaption{font:400 clamp(17px,min(1.9vw,2.8svh),26px)/1 var(--display);text-transform:lowercase;color:var(--amarillo);transition:color .9s}
 .hab .r4 .box{min-height:clamp(100px,22svh,220px);padding:clamp(16px,2.8svh,34px) clamp(16px,2vw,28px);background:var(--amarillo);color:var(--negro);border-color:var(--amarillo);box-shadow:0 0 90px rgba(251,236,53,.4);display:grid;gap:10px 40px;align-content:end}
 .hab .r4 ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
 .hab .r4 li{font-size:clamp(13px,min(1.5vw,2.3svh),20px)}
 .hab .r4 .cierre{font:400 clamp(22px,min(3.2vw,4.6svh),44px)/1.1 var(--display);text-transform:lowercase}
 @media(min-width:900px){.hab .r4 .box{grid-template-columns:1fr auto;align-items:end}.hab .r4 .cierre{max-width:14ch;text-align:left}}
-@media(max-width:899px){.hab{padding-top:78px}.hab .h2{font-size:28px}.hab .sec{font-size:11px}.hab .box p,.hab .box li{font-size:12px;line-height:1.4}.hab figcaption{font-size:19px}.hab .r4 .cierre{font-size:21px}.hab .rooms .box{min-height:0;align-items:flex-start}.hab .r4 .box{min-height:0}}
+@media(max-width:899px){.hab{padding-top:78px}.hab .h2{font-size:28px}.hab .sec{font-size:11px}.hab .box p,.hab .box li{font-size:12px;line-height:1.4}.hab figcaption{font-size:17px}.hab .r4 .cierre{font-size:21px}.hab .rooms .box{min-height:0;align-items:flex-start}.hab .r4 .box{min-height:0}}
 .hab .emo{position:absolute;top:clamp(8px,1.4svh,16px);right:clamp(10px,1.4vw,18px);font:700 clamp(13px,min(1.5vw,2.3svh),20px)/1 var(--mono);letter-spacing:.02em;display:grid}
 .hab .emo b{grid-area:1/1;font:inherit;transition:opacity .25s,transform .4s}
 .hab .emo .f2{opacity:0;transform:translateY(-4px)}
@@ -938,6 +939,7 @@ html{scroll-behavior:auto}
 .mb .mal li{font:400 max(13px,1.1cqw)/1 var(--mono);text-transform:lowercase;color:var(--blanco);border:1.5px solid var(--amarillo);border-radius:999px;padding:.55em 1em}
 @media(max-width:1000px){.mb .mgr{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.mb .mgr{grid-template-columns:1fr}.mb .mc{min-height:0}}
+.wl .wsel{margin:0 0 14px;font:700 clamp(12px,1.1vw,14px)/1.3 var(--mono);text-transform:lowercase;color:var(--amarillo)}.wl .wsel b{color:var(--blanco);font:inherit;border-bottom:1.5px solid var(--amarillo)}
 .wl .wlf iframe{display:block;width:100%;min-height:560px;border:0;background:transparent}
 /* atp flash */
 @media(max-width:899px){.hab{min-height:0;padding-bottom:56px}}
@@ -960,9 +962,9 @@ html{scroll-behavior:auto}
 <section class="band negro hab" id="problema"><div class="in">
 <h2 class="h2" data-rv>nos pasó a nosotrxs.</h2>
 <div class="rooms">
-<figure class="room" data-rv tabindex="0"><div class="box"><span class="emo" aria-hidden="true"><b class="f1">(-_-)</b><b class="f2">(;_;)</b></span><p>el día se nos iba scrolleando reels.</p></div><figcaption>en casa</figcaption></figure>
-<figure class="room" data-rv tabindex="0"><div class="box"><span class="emo" aria-hidden="true"><b class="f1">(._.)</b><b class="f2">(T_T)</b></span><p>a la hora nos miraban invitándonos a irnos.</p></div><figcaption>en un café</figcaption></figure>
-<figure class="room" data-rv tabindex="0"><div class="box"><span class="emo" aria-hidden="true"><b class="f1">(o_o)</b><b class="f2">(x_x)</b></span><p>paredes blancas y nadie con quien hablar de lo que hacemos.</p></div><figcaption>en un cowork</figcaption></figure>
+<figure class="room" data-rv tabindex="0"><figcaption>en casa</figcaption><div class="box"><span class="emo" aria-hidden="true"><b class="f1">(-_-)</b><b class="f2">(;_;)</b></span><p>el día se nos iba scrolleando reels.</p></div></figure>
+<figure class="room" data-rv tabindex="0"><figcaption>en un café</figcaption><div class="box"><span class="emo" aria-hidden="true"><b class="f1">(._.)</b><b class="f2">(T_T)</b></span><p>a la hora nos miraban invitándonos a irnos.</p></div></figure>
+<figure class="room" data-rv tabindex="0"><figcaption>en un cowork</figcaption><div class="box"><span class="emo" aria-hidden="true"><b class="f1">(o_o)</b><b class="f2">(x_x)</b></span><p>paredes blancas y nadie con quien hablar de lo que hacemos.</p></div></figure>
 </div>
 <figure class="room r4 happy" id="r4"><div class="box"><span class="emo" aria-hidden="true"><b class="f1">(-_-)</b><b class="f2">(^_^)</b></span><ul><li>así que creamos un lugar donde nadie nos invite a irnos. solo a quedarnos.</li></ul><p class="cierre">no es un <s>cowork</s>, sí collabwork.</p></div></figure>
 </div></section>
@@ -986,7 +988,7 @@ html{scroll-behavior:auto}
 <li class="spi" data-rv><span class="spn" aria-hidden="true">04</span><h3 class="spk">salas privadas</h3><p class="spd">para una reunión con un cliente o una llamada importante, con la cortina cerrada.</p></li>
 <li class="spi" data-rv><span class="spn" aria-hidden="true">05</span><h3 class="spk">quiosco de inspo</h3><p class="spd">revistas, periódicos y referencias de todas partes del mundo que solo encuentras en junta.</p></li>
 <li class="spi" data-rv><span class="spn" aria-hidden="true">06</span><h3 class="spk">zona de producción</h3><p class="spd">un espacio disponible para crear y tangibilizar tus ideas.</p></li>
-<li class="spi" data-rv><span class="spn" aria-hidden="true">07</span><h3 class="spk">eventos</h3><p class="spd">junta va a tener una agenda siempre viva, con el espacio disponible para artistas que quieran contar lo que hacen.</p></li>
+<li class="spi" data-rv><span class="spn" aria-hidden="true">07</span><h3 class="spk">eventos</h3><p class="spd">junta tiene una agenda siempre viva, con el espacio disponible para artistas que quieran contar lo que hacen.</p></li>
 </ol>
 <a class="go" href="#waitlist">súmate a la waitlist<span class="hrt" aria-hidden="true">&lt;3</span></a>
 </div></section>
@@ -996,10 +998,10 @@ html{scroll-behavior:auto}
 <p class="mbs" data-rv>lxs miembrxs iniciales entran con 20% de descuento durante 12 meses.</p>
 <div class="mall" data-rv><p class="mak k">todos los pases incluyen</p><ul class="mal"><li>agenda de eventos</li><li>acceso al café</li><li>mesas largas</li><li>quiet hour</li><li>quiosco de inspo</li></ul></div>
 <ul class="mgr">
-<li class="mc mc-rosa" data-rv><span class="mn" aria-hidden="true">01</span><h3 class="mt">pase de día</h3><p class="md">para probar junta o venir cuando lo necesitas.</p><ul class="ml"><li>sin compromiso mensual</li></ul><a class="mp" href="#waitlist" data-m="pase de día">consultar valor</a></li>
-<li class="mc mc-azul" data-rv><span class="mn" aria-hidden="true">02</span><h3 class="mt">flex</h3><p class="md">unos días al mes, los que elijas.</p><ul class="ml"><li>organizas tus días a tu ritmo</li></ul><a class="mp" href="#waitlist" data-m="flex">consultar valor</a></li>
-<li class="mc mc-verde" data-rv><span class="mn" aria-hidden="true">03</span><h3 class="mt">fijo</h3><p class="md">tu lugar propio en junta, todos los días.</p><ul class="ml"><li>acceso todos los días</li><li>tu lugar asignado</li><li>salas privadas por horas</li></ul><a class="mp" href="#waitlist" data-m="fijo">consultar valor</a></li>
-<li class="mc mc-lila" data-rv><span class="mn" aria-hidden="true">04</span><h3 class="mt">equipos</h3><p class="md">para dúos y equipos chicos que trabajan juntxs.</p><ul class="ml"><li>lugares para 2 a 5 personas</li><li>salas privadas con prioridad</li></ul><a class="mp" href="#waitlist" data-m="equipos">consultar valor</a></li>
+<li class="mc mc-rosa" data-rv><span class="mn" aria-hidden="true">01</span><h3 class="mt">pase de día</h3><p class="md">para probar junta o venir cuando lo necesitas.</p><ul class="ml"><li>sin compromiso mensual</li></ul><a class="mp" href="#waitlist" data-m="pase de día">súmate a la waitlist</a></li>
+<li class="mc mc-azul" data-rv><span class="mn" aria-hidden="true">02</span><h3 class="mt">flex</h3><p class="md">unos días al mes, los que elijas.</p><ul class="ml"><li>organizas tus días a tu ritmo</li></ul><a class="mp" href="#waitlist" data-m="flex">súmate a la waitlist</a></li>
+<li class="mc mc-verde" data-rv><span class="mn" aria-hidden="true">03</span><h3 class="mt">fijo</h3><p class="md">tu lugar propio en junta, todos los días.</p><ul class="ml"><li>acceso todos los días</li><li>tu lugar asignado</li><li>salas privadas por horas</li></ul><a class="mp" href="#waitlist" data-m="fijo">súmate a la waitlist</a></li>
+<li class="mc mc-lila" data-rv><span class="mn" aria-hidden="true">04</span><h3 class="mt">equipos</h3><p class="md">para dúos y equipos chicos que trabajan juntxs.</p><ul class="ml"><li>lugares para 2 a 5 personas</li><li>salas privadas con prioridad</li></ul><a class="mp" href="#waitlist" data-m="equipos">súmate a la waitlist</a></li>
 </ul>
 </div></section>
 <section class="band rojo wl" id="waitlist"><div class="in"><div class="wlg">
@@ -1010,6 +1012,7 @@ html{scroll-behavior:auto}
 <p class="wcount k" id="wcount" aria-live="polite" hidden></p>
 </div>
 <div class="wlf">
+<p class="wsel k" id="wsel" hidden><span>membresía elegida:</span> <b id="wselv"></b></p>
 <iframe id="tally" data-tally-src="https://tally.so/embed/db0JBD?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="560" frameborder="0" marginheight="0" marginwidth="0" title="waitlist junta"></iframe>
 </div>
 </div></div></section>
@@ -1095,7 +1098,7 @@ var EN={
 "próximamente":"coming soon","referencias del espacio · apertura '27":"space references · opening '27","nuestro espacio":"our space","membresías":"memberships","elige cómo juntarte":"choose how to get together","lxs miembrxs iniciales entran con 20% de descuento durante 12 meses.":"initial members get 20% off for 12 months.",
 "pase de día":"day pass","para probar junta o venir cuando lo necesitas.":"to try junta or come in when you need it.","mesas largas y café":"long tables and café","sin compromiso mensual":"no monthly commitment",
 "flex":"flex","unos días al mes, los que elijas.":"a few days a month, the ones you choose.","mesas largas, café y quiet hour":"long tables, café and quiet hour","agenda de eventos":"events calendar","organizas tus días a tu ritmo":"plan your days at your own pace",
-"fijo":"fixed","todos los pases incluyen":"all passes include","acceso al café":"café access","quiosco de inspo":"inspo kiosk","consultar valor":"ask about pricing","¿qué membresía te interesa? (opcional)":"which membership interests you? (optional)","todavía no sé":"not sure yet","tu lugar propio en junta, todos los días.":"your own spot at junta, every day.","acceso todos los días":"access every day","tu lugar asignado":"your assigned spot","salas privadas por horas":"private rooms by the hour",
+"fijo":"fixed","todos los pases incluyen":"all passes include","acceso al café":"café access","quiosco de inspo":"inspo kiosk","membresía elegida:":"selected membership:","¿qué membresía te interesa? (opcional)":"which membership interests you? (optional)","todavía no sé":"not sure yet","tu lugar propio en junta, todos los días.":"your own spot at junta, every day.","acceso todos los días":"access every day","tu lugar asignado":"your assigned spot","salas privadas por horas":"private rooms by the hour",
 "equipos":"teams","para dúos y equipos chicos que trabajan juntxs.":"for duos and small teams who work together.","lugares para 2 a 5 personas":"spots for 2 to 5 people","salas privadas con prioridad":"private rooms with priority","precio al abrir la lista":"price when the list opens",
 "qué espacios tiene junta":"the spaces at junta","un lugar, varias formas de trabajar":"one place, many ways to work",
 "mesas largas":"long tables","el corazón de junta. trabajas rodeadx de gente de otras industrias y los cruces pasan solos.":"the heart of junta. you work surrounded by people from other industries and the crossings just happen.",
@@ -1103,7 +1106,7 @@ var EN={
 "quiet hour":"quiet hour","un rato de silencio en común para todxs. concentración sin tener que irte a casa.":"a shared stretch of silence for everyone. focus without having to go home.",
 "salas privadas":"private rooms","para una reunión con un cliente o una llamada importante, con la cortina cerrada.":"for a client meeting or an important call, with the curtain closed.",
 "quiosco de inspo":"inspo kiosk","revistas, periódicos y referencias de todas partes del mundo que solo encuentras en junta.":"magazines, newspapers and references from all over the world that you only find at junta.",
-"zona de producción":"production area","un espacio disponible para crear y tangibilizar tus ideas.":"a space available to create and make your ideas tangible.","eventos":"events","junta va a tener una agenda siempre viva, con el espacio disponible para artistas que quieran contar lo que hacen.":"junta will have an always-live agenda, with the space open to artists who want to share what they do.",
+"zona de producción":"production area","un espacio disponible para crear y tangibilizar tus ideas.":"a space available to create and make your ideas tangible.","eventos":"events","junta tiene una agenda siempre viva, con el espacio disponible para artistas que quieran contar lo que hacen.":"junta has an always-live agenda, with the space open to artists who want to share what they do.",
 "si no llegas a entrar en esta lista, no te preocupes, quedas en lista de espera por si se libera un lugar. nosotrxs te avisamos <3":"if you don't make it into this list, don't worry, you stay on the waitlist in case a spot opens up. we'll let you know <3","estamos en obra, en pleno centro de barcelona.":"we're under construction, in the heart of barcelona.",
 "los primeros 30.":"the first 30.",
 "lxs primerxs 30 en la lista entran con 20% de descuento durante 12 meses.":"the first 30 on the list get in with 20% off for 12 months.",
@@ -1158,7 +1161,8 @@ function load(m){var u=base+(m?"&membresia="+encodeURIComponent(m):"");f.setAttr
 var T=document.createElement("script");T.src="https://tally.so/widgets/embed.js";T.async=true;
 T.onload=function(){if(window.Tally&&Tally.loadEmbeds)Tally.loadEmbeds();else f.src=f.getAttribute("data-tally-src")};
 T.onerror=function(){f.src=f.getAttribute("data-tally-src")};document.body.appendChild(T);
-[].forEach.call(document.querySelectorAll(".mp[data-m]"),function(a){a.addEventListener("click",function(){f.src=base+"&membresia="+encodeURIComponent(a.getAttribute("data-m"))})})})();
+var EN={"pase de día":"day pass","flex":"flex","fijo":"fixed","equipos":"teams"};
+[].forEach.call(document.querySelectorAll(".mp[data-m]"),function(a){a.addEventListener("click",function(){var m=a.getAttribute("data-m"),c=document.getElementById("wsel"),v=document.getElementById("wselv");f.src=base+"&membresia="+encodeURIComponent(m);if(c&&v){v.textContent=document.documentElement.lang==="en"?(EN[m]||m):m;c.hidden=false}})})})();
 </script>
 </body>
 </html>
