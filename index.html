@@ -1158,13 +1158,17 @@ imgs.forEach(function(im,i){var col=i%n,d=(col%2?1:-1),amp=Math.min(46,im.parent
 addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(par)}},{passive:true});addEventListener('resize',par);par()})();
 </script><script>
 (function(){var f=document.getElementById("tally");if(!f)return;
-var base=f.getAttribute("data-tally-src");
-function load(m){var u=base+(m?"&membresia="+encodeURIComponent(m):"");f.setAttribute("data-tally-src",u);f.src=u}
+var IDS={es:"db0JBD",en:"8NZM15",ca:"aO2v9v"},Q="?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1",cur="",lang="es";
+function url(){var u="https://tally.so/embed/"+IDS[lang]+Q+(cur?"&membresia="+encodeURIComponent(cur):"");return u}
+function setSrc(){var u=url();f.setAttribute("data-tally-src",u);f.src=u}
+f.setAttribute("data-tally-src",url());
 var T=document.createElement("script");T.src="https://tally.so/widgets/embed.js";T.async=true;
 T.onload=function(){if(window.Tally&&Tally.loadEmbeds)Tally.loadEmbeds();else f.src=f.getAttribute("data-tally-src")};
 T.onerror=function(){f.src=f.getAttribute("data-tally-src")};document.body.appendChild(T);
 var EN={"pase de día":"day pass","flex":"flex","fijo":"fixed","equipos":"teams"},CA={"pase de día":"passi de dia","flex":"flex","fijo":"fix","equipos":"equips"};
-[].forEach.call(document.querySelectorAll(".mp[data-m]"),function(a){a.addEventListener("click",function(){var m=a.getAttribute("data-m"),c=document.getElementById("wsel"),v=document.getElementById("wselv");f.src=base+"&membresia="+encodeURIComponent(m);if(c&&v){var L=document.documentElement.lang;v.textContent=L==="en"?(EN[m]||m):L==="ca"?(CA[m]||m):m;c.hidden=false}})})})();
+function lbl(){var L=document.documentElement.lang;return L==="en"?(EN[cur]||cur):L==="ca"?(CA[cur]||cur):cur}
+[].forEach.call(document.querySelectorAll(".mp[data-m]"),function(a){a.addEventListener("click",function(){cur=a.getAttribute("data-m");var c=document.getElementById("wsel"),v=document.getElementById("wselv");setSrc();if(c&&v){v.textContent=lbl();c.hidden=false}})});
+[].forEach.call(document.querySelectorAll(".lg button"),function(bt){bt.addEventListener("click",function(){var l=bt.getAttribute("data-l");setTimeout(function(){if(l===lang)return;lang=l;setSrc();var v=document.getElementById("wselv");if(v&&cur)v.textContent=lbl()},0)})})})();
 </script>
 </body>
 </html>
